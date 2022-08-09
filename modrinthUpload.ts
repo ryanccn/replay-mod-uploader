@@ -21,6 +21,7 @@ export const uploadToModrinth = async (
     "version_number": `${version}-${gameVersion}`,
     "game_versions": [gameVersion],
     "version_type": "release",
+    "changelog": await Deno.readTextFile(`changelogs/${version}.txt"`),
     "loaders": [loader],
     "featured": false,
     "project_id": PROJECT_ID,
